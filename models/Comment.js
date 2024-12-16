@@ -1,43 +1,46 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Comment extends Model {}
 
 Comment.init(
-   { 
+  {
     id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "post",
+        key: "id",
       },
-      content: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      onDelete: "CASCADE",
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
       },
-      postId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: Post,
-          key: 'id',
-        },
-        onDelete: 'CASCADE', 
-      },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: User,
-          key: 'id',
-        },
-        onDelete: 'CASCADE',
-      },
-    }, {
-        sequelize,
-        modelName: 'user',
-        freezeTableName: true,
-        underscored: true,
-        timestamps: false,
-    });
+      onDelete: "CASCADE",
+    },
+  },
+  {
+    sequelize,
+    modelName: "user",
+    freezeTableName: true,
+    underscored: true,
+    timestamps: false,
+  }
+);
 
-    module.exports = Comment;
+module.exports = Comment;
