@@ -15,7 +15,7 @@ Comment.init(
         allowNull: false,
       },
       postId: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
           model: Post,
@@ -23,7 +23,7 @@ Comment.init(
         },
         onDelete: 'CASCADE', 
       },
-      user_id: {
+      userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -39,3 +39,5 @@ Comment.init(
         underscored: true,
         timestamps: false,
     });
+
+    module.exports = Comment;
