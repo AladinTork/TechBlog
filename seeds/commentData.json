@@ -1,0 +1,57 @@
+[
+  {
+    "userId": 2,
+    "postId": 1,
+    "content": "amazing first post!"
+  },
+  {
+    "userId": 3,
+    "postId": 1,
+    "content": "amazing first post!"
+  },
+  {
+    "userId": 4,
+    "postId": 1,
+    "content": "amazing first post!"
+  },
+  {
+    "userId": 5,
+    "postId": 1,
+    "content": "amazing first post!"
+  },
+  {
+    "userId": 2,
+    "postId": 2,
+    "content": "amazing second post!"
+  },
+  {
+    "userId": 1,
+    "postId": 3,
+    "content": "amazing third post!"
+  },
+  {
+    "userId": 2,
+    "postId": 4,
+    "content": "amazing fourth post!"
+  },
+  {
+    "userId": 1,
+    "postId": 5,
+    "content": "amazing fifth post!"
+  },
+  {
+    "userId": 2,
+    "postId": 5,
+    "content": "amazing fifth post!"
+  },
+  {
+    "userId": 3,
+    "postId": 5,
+    "content": "amazing fifth post!"
+  },
+  {
+    "userId": 4,
+    "postId": 5,
+    "content": "amazing fifth post!"
+  }
+]

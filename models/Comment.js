@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const Post = require("./Post");
+const User = require("./User");
 
 class Comment extends Model {}
 
@@ -19,7 +21,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "post",
+        model: 'post',
         key: "id",
       },
       onDelete: "CASCADE",
@@ -28,7 +30,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
+        model: 'user',
         key: "id",
       },
       onDelete: "CASCADE",
@@ -36,7 +38,7 @@ Comment.init(
   },
   {
     sequelize,
-    modelName: "user",
+    modelName: "comment",
     freezeTableName: true,
     underscored: true,
     timestamps: false,

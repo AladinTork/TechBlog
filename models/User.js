@@ -25,13 +25,7 @@ User.init(
       type: DataTypes.STRING(100),
       allowNull: true,
       unique: true,
-    },
-    first_name: {
-      type: DataTypes.STRING(50),
-    },
-    last_name: {
-      type: DataTypes.STRING(50),
-    },
+    }
   },
   {
     hooks: {

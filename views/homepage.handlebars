@@ -1,0 +1,11 @@
+{{#if loggedIn}}
+  <h1>Welcome, {{user.username}}!</h1>
+{{/if}}
+{{#each posts}}
+  <div class="post">
+    <h2>{{name}}</h2>
+    <p>{{content}}</p>
+    <p>By {{User.username}} on {{date_created}}</p>
+    <a href="/post/{{id}}">Read More</a>
+  </div>
+{{/each}}
