@@ -1,0 +1,15 @@
+{{#if loggedIn}}
+  <h2>Your Posts</h2>
+  <ul>
+    {{#each posts}}
+      <li>
+        <h3>{{this.name}}</h3>
+        <p>{{this.content}}</p>
+        <small>By {{this.User.username}} on {{this.date_created}}</small>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>You need to be logged in to view this page.</p>
+  <a href="/login">Log in</a>
+{{/if}}

@@ -1,0 +1,28 @@
+[
+    {
+        "userId": 1,
+        "name": "First Post",
+        "content": "This is the first ever post on this amazing app!!"
+    },
+    {
+        "userId": 1,
+        "name": "Second Post",
+        "content": "This is the first ever post on this amazing app!!"
+    },
+    {
+        "userId": 2,
+        "name": "Third Post",
+        "content": "This is the first ever post on this amazing app!!"
+    },
+    {
+        "userId": 3,
+        "name": "Fourth Post",
+        "content": "This is the first ever post on this amazing app!!"
+    },
+    {
+        "userId": 5,
+        "name": "Fifth Post",
+        "content": "This is the first ever post on this amazing app!!"
+    }
+    
+]
