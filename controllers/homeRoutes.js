@@ -68,6 +68,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
       include: {
         model: User,
+        as: "author",
         attributes: ["username"],
       },
     });
