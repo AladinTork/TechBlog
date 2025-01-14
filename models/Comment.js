@@ -17,7 +17,7 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    postId: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -26,7 +26,7 @@ Comment.init(
       },
       onDelete: "CASCADE",
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

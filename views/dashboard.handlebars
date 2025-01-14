@@ -1,15 +1,57 @@
 {{#if loggedIn}}
-  <h2>Your Posts</h2>
+  <h2>Your Dashboard</h2>
   <ul>
     {{#each posts}}
-      <li>
-        <h3>{{this.name}}</h3>
-        <p>{{this.content}}</p>
-        <small>By {{this.author.username}} on {{this.date_created}}</small>
+      <li class="post">
+        <h3>{{name}}</h3>
+        <p>{{content}}</p>
+        <p class="post_info">By
+          <strong>{{author.username}}</strong>
+          on
+          {{date_created}}</p>
       </li>
     {{/each}}
   </ul>
+<!-- Centered button to show the new post form -->
+  <div class="center-btn">
+    <button id="openFormBtn" class="open_form_btn">Create New Post</button>
+  </div>
+
+  <!-- Form for creating a new post, initially hidden -->
+  <div id="createPostForm" class="post_form">
+    <h2>Create a New Post</h2>
+    <form action="/api/post/create" method="POST">
+      <label for="name">Post Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" required></textarea>
+
+      <div class="form-buttons">
+        <button type="submit" class="submit_btn">Create Post</button>
+        <button type="button" id="closeFormBtn" class="cancel_btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
 {{else}}
   <p>You need to be logged in to view this page.</p>
   <a href="/login">Log in</a>
 {{/if}}
+
+<script>
+// Get the form and buttons
+var form = document.getElementById("createPostForm");
+var openFormBtn = document.getElementById("openFormBtn");
+var closeFormBtn = document.getElementById("closeFormBtn");
+
+// When the user clicks the "Create New Post" button, show the form
+openFormBtn.onclick = function() {
+  form.style.display = "block";
+}
+
+// When the user clicks the "Cancel" button, hide the form
+closeFormBtn.onclick = function() {
+  form.style.display = "none";
+}
+</script>
