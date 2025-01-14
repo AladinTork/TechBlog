@@ -61,10 +61,11 @@ router.get("/", async (req, res) => {
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
+    console.log("Session userId:", req.session.userId);
     // Fetch all posts by the logged-in user
     const userPosts = await Post.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
       include: {
         model: User,
@@ -76,6 +77,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     // Serialize posts data
     const posts = userPosts.map((post) => post.get({ plain: true }));
 
+    console.log("Posts found:", posts);
     // Render dashboard with the posts
     res.render("dashboard", {
       posts,
@@ -83,6 +85,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       pageTitle: "Your dashboard",
     });
   } catch (err) {
+    console.error("Error fetching user posts", err);
     res.status(500).json(err);
   }
 });

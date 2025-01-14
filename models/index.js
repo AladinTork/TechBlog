@@ -9,12 +9,12 @@ const Comment = require("./Comment.js");
 // });
 
 Post.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   as: "author",
 });
 
 Post.hasMany(Comment, {
-  foreignKey: "postId",
+  foreignKey: "post_id",
   as: "comments",
   onDelete: "CASCADE",
 });
@@ -31,7 +31,7 @@ Post.hasMany(Comment, {
 // });
 
 Comment.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   as: "author",
 });
 

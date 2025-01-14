@@ -21,11 +21,6 @@ User.init(
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING(100),
-      allowNull: true,
-      unique: true,
-    }
   },
   {
     hooks: {

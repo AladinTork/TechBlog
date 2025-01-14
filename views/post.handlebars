@@ -1,20 +1,35 @@
 <h1>{{post.name}}</h1>
-<p>{{post.content}}</p>
-<p>By {{post.User.username}} on {{post.date_created}}</p>
-
+<div class="post">
+  <p class="post_content">{{post.content}}</p>
+  <p class="post_info">By
+    <strong>{{post.author.username}}</strong>
+    on
+    {{post.date_created}}</p>
+</div>
 {{#if loggedIn}}
-  <form action="/post/{{post.id}}/comment" method="post">
-    <textarea name="commentContent" required placeholder="Add a comment..."></textarea>
-    <button type="submit">Submit</button>
+  <form
+    action="/api/post/{{post.id}}/comment"
+    method="post"
+    class="comment_form"
+  >
+    <textarea
+      name="commentContent"
+      required
+      class="comment_textarea"
+      placeholder="Add a comment..."
+    ></textarea>
+    <button type="submit" class="comment_submit_btn">Submit</button>
   </form>
 {{else}}
   <p>Please log in to add a comment.</p>
 {{/if}}
 
 <h3>Comments:</h3>
-{{#each post.Comments}}
-  <div class="comment">
-    <p>{{User.username}} said:</p>
+{{#each post.comments}}
+  <div class="comment_box">
     <p>{{content}}</p>
+    <p class="comment_info">{{author.username}} said:</p>
   </div>
 {{/each}}
+
+<script src="/public/js/comment.js"></script>
