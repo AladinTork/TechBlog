@@ -22,12 +22,6 @@ const seedUsers = async () => {
           username: `${user.first_name.toLowerCase()}_${user.last_name.toLowerCase()}`, // Generate username
           email: user.email,
           password: hashedPassword,
-          firstName: user.first_name,
-          lastName: user.last_name,
-          dateOfBirth: user.date_of_birth,
-          gender: user.gender,
-          height: user.height,
-          weight: user.weight,
         });
       }
     }

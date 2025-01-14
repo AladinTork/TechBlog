@@ -1,27 +1,22 @@
 [
   {
     "password_hash": "Hi12345!",
-    "username": "test",
-    "email": "email@1.com"
+    "username": "test"
   },
   {
     "password_hash": "Hi12345!",
-    "username": "test1",
-    "email": "email@2.com"
+    "username": "test1"
   },
   {
     "password_hash": "Hi12345!",
-    "username": "test2",
-    "email": "email@3.com"
+    "username": "test2"
   },
   {
     "password_hash": "Hi12345!",
-    "username": "test3",
-    "email": "email@4.com"
+    "username": "test3"
   },
   {
     "password_hash": "Hi12345!",
-    "username": "test4",
-    "email": "email@5.com"
+    "username": "test4"
   }
 ]
