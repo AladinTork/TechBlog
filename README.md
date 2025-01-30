@@ -42,7 +42,11 @@
   
   ## Usage
   
- 1. **Sign Up / Log In**: Create an account or log in to access full functionality.
+ 1. **Sign Up / Log In**: Create an account or log in to access full functionality. You can use the following account:
+ ```
+   username: test
+   password: Hi12345!
+   ```
 2. **View Blog Posts**: Browse existing blog posts on the homepage.
 3. **Create a Blog Post**: Navigate to your dashboard to add a new post.
 4. **Edit/Delete Posts**: Manage your own posts from the dashboard.
